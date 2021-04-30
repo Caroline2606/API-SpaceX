@@ -34,11 +34,11 @@ data = fetch_spacex_data('https://api.spacexdata.com/v3/launches')
 
 flights = []
 for row in response.json():
-    flight_number = row.get('flight_number', None)
-    mission_name = row.get('mission_name', None)
-    rocket_id = row.get('rocket_id', None)
-    launch_date_utc = row.get('launch_date_utc', None)
-    video_link = row.get('video_link', None)
+    flight_number = row['flight_number']
+    mission_name = row['mission_name']
+    rocket_id = row['rocket']['rocket_id']
+    launch_date_utc = row['launch_date_utc']
+    video_link = row['video_link']
     flights.append([flight_number, mission_name, rocket_id, launch_date_utc, video_link])
 
 with open("space.csv", 'w') as csvfile:
