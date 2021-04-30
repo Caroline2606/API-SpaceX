@@ -24,6 +24,8 @@ def fetch_spacex_data(url):
         raise SpacexHttpError('Fail to fetch SpaceX data.')
     except requests.exceptions.URLRequired:
         raise SpacexURLRequired('A valid URL is required to make a request.')
+    except (requests.exceptions.ConnectTimeout, requests.exceptions.ReadTimeout):
+        raise SpacexTimeout('The request timeout.')
 
     return response.json()
 
