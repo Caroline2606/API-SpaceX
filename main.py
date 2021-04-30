@@ -45,4 +45,5 @@ with open("space.csv", 'w') as csvfile:
     csvwriter.writerow(['flight_number', 'mission_name', 'rocket_id', 'launch_date_utc', 'video_link'])
     csvwriter.writerows(flights)
 
+    
 print(flights)
