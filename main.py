@@ -2,8 +2,6 @@ import requests
 import csv
 
 url = 'https://api.spacexdata.com/v3/launches'
-response = requests.get(url)
-
 
 
 class SpacexHttpError(Exception):
