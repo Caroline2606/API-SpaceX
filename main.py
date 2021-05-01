@@ -1,8 +1,10 @@
 import requests
 import csv
 
-response = requests.get('https://api.spacexdata.com/v3/launches')
-data = response.json()
+url = 'https://api.spacexdata.com/v3/launches'
+response = requests.get(url)
+
+
 
 class SpacexHttpError(Exception):
     pass
@@ -18,7 +20,7 @@ class SpacexTimeout(Exception):
 
 def fetch_spacex_data(url):
     try:
-        response = requests.get('https://api.spacexdata.com/v3/launches')
+        response = requests.get(url)
         response.raise_for_status()
     except (requests.exceptions.HTTPError, requests.exceptions.ConnectionError):
         raise SpacexHttpError('Fail to fetch SpaceX data.')
@@ -34,7 +36,7 @@ data = fetch_spacex_data('https://api.spacexdata.com/v3/launches')
 
 
 flights = []
-for row in response.json():
+for row in data:
     flight_number = row['flight_number']
     mission_name = row['mission_name']
     rocket_id = row['rocket']['rocket_id']
