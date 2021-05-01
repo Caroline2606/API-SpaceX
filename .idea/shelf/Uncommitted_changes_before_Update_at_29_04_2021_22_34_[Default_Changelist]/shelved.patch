@@ -1,0 +1,18 @@
+Index: requirements.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/requirements.txt b/requirements.txt
+new file mode 100644
+--- /dev/null	(date 1619724511318)
++++ b/requirements.txt	(date 1619724511318)
+@@ -0,0 +1,8 @@
++certifi==2020.12.5
++chardet==4.0.0
++gitdb==4.0.7
++GitPython==3.1.14
++idna==2.10
++requests==2.25.1
++smmap==4.0.0
++urllib3==1.26.4
